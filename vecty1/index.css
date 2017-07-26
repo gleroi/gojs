@@ -7,7 +7,12 @@ body {
 }
 
 button.action {
-    padding: 5px 7px;
+    padding: 7px 7px;
     margin: 3px;
     font-variant: small-caps;
+    color: #333333;
+    font-weight: bold;
+    background-color: #8BC34A;
+    border: 1px solid #33691e;
+    border-radius: 7px;
 }

@@ -3,8 +3,8 @@ package main
 
 import (
 	"fmt"
+	"log"
 
-	"github.com/gopherjs/gopherjs/js"
 	"github.com/gopherjs/vecty"
 	"github.com/gopherjs/vecty/elem"
 	"github.com/gopherjs/vecty/event"
@@ -16,18 +16,14 @@ type Main struct {
 	counter int
 }
 
-func log(l string) {
-	js.Global.Get("console").Call("log", l)
-}
-
 func (m *Main) Add(e *vecty.Event) {
-	log("add")
+	log.Println("add")
 	m.counter++
 	vecty.Rerender(m)
 }
 
 func (m *Main) Remove(e *vecty.Event) {
-	log("remove")
+	log.Printf("remove")
 	m.counter--
 	vecty.Rerender(m)
 }
@@ -43,11 +39,13 @@ func (m *Main) Render() *vecty.HTML {
 			vecty.Text("Add"), event.Click(m.Add)),
 		elem.Button(
 			prop.Class("action"),
+
 			vecty.Text("Remove"), event.Click(m.Remove)),
 	))
 }
 
 func main() {
 	vecty.SetTitle("Go JS!")
+	vecty.AddStylesheet("index.css")
 	vecty.RenderBody(&Main{})
 }
