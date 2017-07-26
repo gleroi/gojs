@@ -1,0 +1,13 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.counter {
+    font-size: 2em;
+}
+
+button.action {
+    padding: 5px 7px;
+    margin: 3px;
+    font-variant: small-caps;
+}
